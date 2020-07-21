@@ -13,15 +13,14 @@ It uses www.pushover.com as the service provider.
 3.	Create a app in the web app, note its appid.
 
 4.	Create a credentials file, “.pushover” in your home with access permission 700.
-    Template :
+      Template :
       _token='YOUR_APP_CODE'
       _user='YOUR_USER_CODE'
  
 6.	Copy the following scriptfile in your ~/bin.
 
-7.	To run it. 
+7.	To run it.
      push2phone <Notification Header> <Notification Message>
-
 Eg:  $ push2phone "Test Notification Header" "This is a test notification to device"
 
 
