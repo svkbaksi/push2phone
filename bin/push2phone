@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+
+header=$1
+message=$2
+
+credentials=~/.pushover
+
+# Input QC
+if [ ! -e $credentials ]
+then 
+    echo "credentials file for pushover not found. exiting ..."
+    exit 1
+fi
+
+source $credentials
+echo "INFO : Sending notification to your device ... "
+curl -s --form-string "token=${_token}" \
+        --form-string "user=${_user}" \
+        --form-string "title=${header:cli-app}" \
+        --form-string "message=$message" https://api.pushover.net/1/messages.json
+echo ""
